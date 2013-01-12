@@ -1,0 +1,57 @@
+<!-- Logo -->
+<aside id="logo" class="clearfix">
+  <div class="clearfix">
+    <a href="{{ root_url}}/blog/archives">{{ site.title }}</a>
+  </div>
+</aside>
+
+<!-- menu -->
+<ul id="menu" >
+  {% if site.title %}
+  <li class="title">
+    <h1 id="title"><a href="{{ root_url }}/blog">{{ site.title }}</a></h1>
+  </li>
+  {% endif %}
+
+  {% if site.subtitle %}
+  <li class="subtitle">
+    <h2 id="subtitle">{{ site.subtitle }}</h2>
+  </li>
+  {% endif %}
+
+  {% comment %}<li class="link"> <a href="{{ root_url }}/blog/">Blog</a> </li>{% endcomment %}
+  <li class="link"> <a href="{{ root_url }}/blog/archives/">Archive</a> </li>
+  <li class="link"> <a href="{{ root_url }}/reading/">Readings</a> </li>
+  <li class="link"> <a href="{{ root_url }}/contact/">Contact</a> </li>
+
+  {% if site.twitter_user %}
+  <li class="link">
+    <a href="http://twitter.com/{{ site.twitter_user }}/">@twitter</a>
+  </li>
+  {% endif %}
+
+  {% if site.github_user and site.github_show_profile_link %}
+    <li class="link">
+  <a href="http://github.com/{{ site.github_user }}/">@Github</a>
+  </li>
+  {% endif %}
+
+  <li class="link rss"> <a href="/atom.xml">rss feed</a> </li>
+
+  <!-- Nexus -->
+  <aside id="nexus">
+    <li class="link">
+    <a href="{{root_url }}/">nexus</a>
+    </li>
+  </aside>
+
+</ul>
+
+{% if site.simple_search %}
+  <form action="{{ site.simple_search }}" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:{{ site.url | shorthand_url }}" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+{% endif %}
