@@ -5,6 +5,7 @@
   article {
     padding: 1em 0 1em;
     position: relative;
+    max-width: 500px;
     background: $img-border bottom left repeat-x;
     &:last-child {
       background: none;
@@ -14,11 +15,11 @@
   h1 { color: $text-color; margin-bottom: .3em; }
   h2 { display: none; }
   h1 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     a {
-      @include hover-link;
+      /*@include hover-link;*/
       color: inherit;
-      &:hover { color: $link-color-hover; }
+      /*&:hover { color: $link-color-hover; }*/
       font-weight: normal;
       display: inline-block;
     }
