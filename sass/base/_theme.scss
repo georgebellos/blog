@@ -43,8 +43,6 @@ aside#logo div {
 }
 
 
-
-
 // best with open sans
 body {
   font-size: 15px;
@@ -115,6 +113,7 @@ html {
 
 /*readings*/
 .book h2 {
+  font-size: 15px;
   padding-top: 0.8em;
   background: $img-border bottom left repeat-x;
   background-color: transparent;
@@ -127,11 +126,17 @@ html {
   &:first-child {
     background: none;
   }
+  a {
+    color: $link-color;
+    &:hover{
+      color: $theme-color;
+    }
+  }
 }
 
 /*.basic-alignment {*/
-  /*position: static;*/
-  /*padding-top: 0.5em;*/
+/*position: static;*/
+/*padding-top: 0.5em;*/
 /*}*/
 
 
