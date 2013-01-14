@@ -1,31 +1,36 @@
-// Here you can easily change your sites's color scheme.
-// To give it a try, uncomment some of the lines below rebuild your blog, and see how it works.
-// If you need a handy color picker try http://hslpicker.com
+$theme-color: #869eb1; //blue
+$type-border: #ddd !default;
+$theme-color: #869eb1; //blue
+$body-bg: white;
+$noise-bg: image-url('noise.png') top left !default;
+$img-border: inline-image('dotted-border.png');
 
-//$header-bg: #263347;
-//$subtitle-color: lighten($header-bg, 58);
-//$nav-bg: desaturate(lighten(#8fc17a, 18), 5);
-//$nav-bg-front: image-url('noise.png');
-//$nav-bg-back: linear-gradient(lighten($nav-bg, 8), $nav-bg, darken($nav-bg, 11));
-//$sidebar-bg: desaturate(#eceff5, 8);
-//$sidebar-link-color: saturate(#526f9a, 10);
-//$sidebar-link-color-hover: darken(#7ab662, 9);
-//$footer-bg: #ccc !default;
-//$footer-bg-front: image-url('noise.png');
-//$footer-bg-back: linear-gradient(lighten($footer-bg, 8), $footer-bg, darken($footer-bg, 11));
+// Main Link Colors
+$link-color: lighten(#165b94, 5) !default;
+$link-title-color: #170e01;
+$link-color-hover: darken($theme-color, 5) !default;
+$link-color-active: darken($theme-color, 5) !default;
 
+$text-color: #222 !default;
+$text-color-light: #aaa !default;
+$type-border: #ddd !default;
+
+$title-color: #f2f2f2 !default;
+$subtitle-color: #aaa !default;
 
 /* To use the light Solarized highlighting theme uncomment the following line */
-//$solarized: light;
+/*$solarized: light;*/
 
 /* If you want to tweak the Solarized colors you can do that here */
-//$base03:          #002b36; //darkest blue
-//$base02:          #073642; //dark blue
-//$base01:          #586e75; //darkest gray
+$base03:          darken(#f8f8f8,1);
+/*$base03:          #f2f2f2;*/
+$base02:          #f8f8f8; //dark blue
+
+/*$base01:          #586e75; //darkest gray*/
 //$base00:          #657b83; //dark gray
 //$base0:           #839496; //medium gray
-//$base1:           #93a1a1; //medium light gray
-//$base2:           #eee8d5; //cream
+$base1:           darken(#93a1a1, 25); //medium light gray
+$base2:           #eee8d5; //cream
 //$base3:           #fdf6e3; //white
 //$solar-yellow:    #b58900;
 //$solar-orange:    #cb4b16;
@@ -38,6 +43,6 @@
 
 
 /* Non highlighted code colors */
-//$pre-bg: $base03;
-//$pre-border: darken($base02, 5);
-//$pre-color: $base1;
+$pre-bg: $base03;
+$pre-border: darken($base02, 5);
+$pre-color: $base1;
