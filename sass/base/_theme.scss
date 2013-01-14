@@ -1,86 +1,170 @@
-$noise-bg: image-url('noise.png') top left !default;
-$img-border: inline-image('dotted-border.png');
+.flex-content { max-width: 100%; height: auto; }
 
-// Main Link Colors
-$link-color: lighten(#165b94, 3) !default;
-$link-color-hover: adjust-color($link-color, $lightness: 10, $saturation: 25) !default;
-$link-color-visited: adjust-color($link-color, $hue: 80, $lightness: -4) !default;
-$link-color-active: adjust-color($link-color-hover, $lightness: -15) !default;
-
-// Main Section Colors
-$main-bg: #f8f8f8 !default;
-$page-bg: #252525 !default;
-$article-border: #eeeeee !default;
-
-$header-bg: #333 !default;
-$header-border: lighten($header-bg, 15) !default;
-$title-color: #f2f2f2 !default;
-$subtitle-color: #aaa !default;
-
-$text-color: #222 !default;
-$text-color-light: #aaa !default;
-$type-border: #ddd !default;
-
-/* Navigation */
-$nav-bg: #ccc !default;
-$nav-bg-front: image-url('noise.png') !default;
-$nav-bg-back: linear-gradient(lighten($nav-bg, 8), $nav-bg, darken($nav-bg, 11)) !default;
-$nav-color: darken($nav-bg, 38) !default;
-$nav-color-hover: darken($nav-color, 25) !default;
-$nav-placeholder: desaturate(darken($nav-bg, 10), 15) !default;
-$nav-border: darken($nav-bg, 10) !default;
-$nav-border-top: lighten($nav-bg, 15) !default;
-$nav-border-bottom: darken($nav-bg, 25) !default;
-$nav-border-left: darken($nav-bg, 11) !default;
-$nav-border-right: lighten($nav-bg, 7) !default;
-
-/* Sidebar colors */
-$sidebar-bg: #f2f2f2 !default;
-$sidebar-link-color: $link-color !default;
-$sidebar-link-color-hover: $link-color-hover !default;
-$sidebar-link-color-active: $link-color-active !default;
-$sidebar-color: change-color(mix($text-color, $sidebar-bg, 80), $hue: hue($sidebar-bg), $saturation: saturation($sidebar-bg)/2) !default;
-$sidebar-border: desaturate(darken($sidebar-bg, 7), 10) !default;
-$sidebar-border-hover: darken($sidebar-bg, 7) !default;
-$sidebar-link-color-subdued: lighten($sidebar-color, 20) !default;
-$sidebar-link-color-subdued-hover: $sidebar-link-color-hover !default;
-$twitter-status-link: lighten($sidebar-link-color-subdued, 15) !default;
-
-$footer-color: #888 !default;
-$footer-bg: #ccc !default;
-$footer-bg-front: image-url('noise.png') !default;
-$footer-bg-back: linear-gradient(lighten($footer-bg, 8), $footer-bg, darken($footer-bg, 11)) !default;
-$footer-color: darken($footer-bg, 38) !default;
-$footer-color-hover: darken($footer-color, 10) !default;
-$footer-border-top: lighten($footer-bg, 15) !default;
-$footer-border-bottom: darken($footer-bg, 15) !default;
-$footer-link-color: darken($footer-bg, 38) !default;
-$footer-link-color-hover: darken($footer-color, 25) !default;
-$page-border-bottom: darken($footer-bg, 5) !default;
-
+.basic-alignment {
+  &.left { float: left; margin-right: 1.5em; }
+  &.right { float: right; margin-left: 1.5em; }
+  &.center { display:block; margin: 0 auto 1.5em; }
+  &.left, &.right { margin-bottom: .8em; }
+}
 
 /* Core theme application */
-
 a {
-  @include link-colors($link-color, $hover: $link-color-hover, $focus: $link-color-hover, $visited: $link-color-visited, $active: $link-color-active);
-}
-aside.sidebar a {
-  @include link-colors($sidebar-link-color, $hover: $sidebar-link-color-hover, $focus: $sidebar-link-color-hover, $active: $sidebar-link-color-active);
-}
-a {
-  @include transition(color .3s);
+  @include link-colors($link-color, $hover: $link-color-hover, $focus: $link-color-hover, $active: $link-color-active);
+  text-decoration: none;
 }
 
-html {
-  background: $page-bg image-url('line-tile.png') top left;
+header h1 a {
+  color: $link-title-color;
 }
+
+h2 a, header#sidebar a {
+  color: black;
+  &:hover{
+    color: $theme-color;
+  }
+}
+
+
+/* General rules */
 body {
+  background-color: $body-bg;
+}
+
+li {
+  line-height: 18px;
+  margin-bottom: 12px;
+}
+
+ul {
+  display: block;
+  list-style-type: none;
+}
+
+
+// Logo
+aside#logo {
+  background-color: $theme-color;
+}
+
+aside#logo div {
+  background-size: 100% 100%;
+  background: white
+}
+
+
+
+// images and photoes
+p img, video, .flash-video {
+  @extend .flex-content;
+  @extend .basic-alignment;
+  @include shadow-box;
+}
+
+video, .flash-video { margin: 0 auto 1.5em; }
+video { display: block; width: 100%; }
+.flash-video {
   > div {
-    background: $sidebar-bg $noise-bg;
-    border-bottom: 1px solid $page-border-bottom;
-    > div {
-      background: $main-bg $noise-bg;
-      border-right: 1px solid $sidebar-border;
+    position: relative;
+    display: block;
+    padding-bottom: 56.25%;
+    padding-top: 1px;
+    height: 0;
+    overflow: hidden;
+    iframe, object, embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   }
+}
+
+// best with open sans
+body {
+  font-size: 15px;
+  line-height: 1.53em;
+  color: rgb(77, 77, 77);
+  font-weight: normal;
+  letter-spacing: normal;
+  word-spacing: 0px;
+}
+
+
+// pagination
+nav#pagination {
+  /*position: relative;*/
+  padding: 40px;
+  border-top: 1px solid #E2E2E2;
+  padding-bottom: 100px;
+  span.next a, span.prev a {
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 3px solid;
+  }
+  span.prev {
+    display: block;
+    float: left;
+  }
+  span.next {
+    display: block;
+    float: right;
+  }
+}
+
+/*sidebar*/
+
+header#sidebar .link a {
+  border-radius: 20px 20px 20px 20px;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  border: 3px solid;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  z-index: 999;
+  line-height: 14px;
+  padding: 7px 15px;
+  color: rgb(153, 153, 153);
+  border: 4px solid rgb(248, 248, 248);
+  &:hover{
+    border-color: $theme-color;
+  }
+}
+
+header#sidebar h1#title a {
+  color: black;
+}
+
+
+html {
+  -webkit-text-size-adjust: 110%
+}
+
+
+/*readings*/
+.book h2 {
+  padding-top: 0.8em;
+  background: $img-border bottom left repeat-x;
+  background-color: transparent;
+  background-repeat: repeat-x;
+  background-attachment: scroll;
+  background-position: left top;
+  background-clip: border-box;
+  background-origin: padding-box;
+  background-size: auto auto;
+  &:first-child {
+    background: none;
+  }
+}
+
+.basic-alignment {
+  position: static;
+  padding-top: 0.5em;
 }
