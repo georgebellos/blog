@@ -1,5 +1,5 @@
-$min-width: 895px;
-$sidebar-size: 25%;
+$min-width: 895px !default;
+$sidebar-size: 20%;
 
 body {
   min-width: $min-width;
@@ -47,4 +47,70 @@ ul#menu {
   left: 48px;
   bottom: 25px;
   z-index: 9999;
+}
+
+// Short screen
+@media only screen and (max-height: 650px) {
+  #sidebar {
+    position: absolute;
+  }
+  #nexus {
+    position: absolute;
+    display: inline-block;
+    margin-right: 5px;
+    left: auto;
+  }
+  ul#menu a{
+    margin-left: 0px;
+  }
+}
+
+// Medium-width screen
+@media only screen and (max-width: 630px),
+(device-height: 1024px) and (device-width: 768px) and (orientation: portrait) {
+  body { min-width: 0; }
+
+  #sidebar {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+
+  ul#menu {
+    width: auto;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    li.link {
+      display: inline-block;
+      float: none;
+      width: auto;
+      clear: none;
+      margin: 0;
+      margin-bottom: 5px;
+    }
+    li.rss {
+      display: none;
+    }
+    a {
+      margin-left: 0px;
+    }
+  }
+
+  #nexus {
+    top: -10px;
+    right: 5px;
+    left: auto;
+    position: absolute;
+  }
+}
+
+/*dont change font weight on landcape mode*/
+/*this also fixes the position fixed problems with sidebar*/
+@media only screen and (max-width: 630px),
+(device-height: 1024px) and (device-width: 768px) and (orientation: landscape) {
+  #sidebar{
+    -webkit-transform:translate3d(0,0,0);
+  }
 }
