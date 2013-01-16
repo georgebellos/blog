@@ -16,3 +16,4 @@ group :development do
 end
 
 gem 'sinatra', '~> 1.3.3'
+gem 'susy', '~> 1.0.5'
