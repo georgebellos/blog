@@ -1,2 +1,13 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+
+.linklog .entry-title a {
+  color: lime;
+}
+.entry-title:hover .linklog-marker {
+  color: $link-color-hover;
+}
+
+article a[rel=bookmark] {
+  font-size: 1.2em;
+}
