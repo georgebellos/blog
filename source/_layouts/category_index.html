@@ -11,6 +11,8 @@ footer: false
   <h2>{{ year }}</h2>
 {% endunless %}
 <article>
+  {% include post/variables.html %}
+  <article {% if linklog %}class='linklog'{% endif %}>
   {% include archive_post.html %}
 </article>
 {% endfor %}

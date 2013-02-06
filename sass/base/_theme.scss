@@ -113,6 +113,7 @@ html {
 
 /*readings*/
 .book h2 {
+  /*@extend .sans;*/
   font-size: 15px;
   padding-top: 0.8em;
   background: $img-border bottom left repeat-x;
@@ -127,7 +128,7 @@ html {
     background: none;
   }
   a {
-    color: $link-color;
+    color: rgb(77,77,77);
     &:hover{
       color: $theme-color;
     }
