@@ -8,12 +8,12 @@
   <meta name="description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
   <link href="{{ root_url }}/favicon.png" rel="icon">
   <link href="{{ root_url }}/stylesheets/landing_page.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="{{ root_url }}/javascripts/jquery.min.js"></script>
+  <script src="/javascripts/jquery.noisy.min.js"></script>
   {% include custom/head.html %}
 </head>
 <body>
-  <div id="landing_page">
     {{ content }}
-  </div>
   {% include google_analytics.html %}
 </body>
 </html>
