@@ -1,120 +1,182 @@
-$main-bg: white;
-$text-color: #222 !default;
+@import "compass";
+@import "susy";
+@include global-reset;
+@include reset-html5;
+/*@import "font-awesome";*/
+@import "few-font-awesome";
 
-html{
-  background: $main-bg;
+$total-columns: 12;             // a 12-column grid
+$column-width: 60px;           // each column is 4em wide
+$gutter-width: 0px;            // 1em gutters between columns
+$grid-padding: 10px;
+
+/*Make it fluid!*/
+$container-style: fluid;
+
+div#wrap {
+  background: image-url("700a.jpg") no-repeat -9999px -9999px;
+  //background:transparent image-url('noiseOverlay.png') no-repeat -9999px -9999px;
+  display: none;
 }
+
+html, body { height: 100%; }
 
 body {
-  margin:50px 0px; padding:0px;
-  text-align:center;
+  @include container;
+  margin:0;
+  padding:0;
+  //background:transparent image-url('noiseOverlay.png') repeat top left;
+  background-color: #B0862D; //brown
+  //background-color: #c985e; //brown
+  //background-color: #9ca885; //green
+  opacity: 0.98;
 }
 
-
-p {
-  margin:0px auto;
-  padding:150px;
+#about {
+  @include span-columns(8,12);
+  height : 100%;
+  z-index: -10;
+  //background-color: #B0862D;
+  //opacity: 0.43;
 }
 
-/* Line: */
-hr {
-  background: #D8D8D8;
-  /*border: 2px;*/
-  width: 800px;
+#sidebar {
+  @include span-columns(3 omega, 9);
+  height: 100%;
+  z-index: -99;
+  //background: #5B8387; //fallback color
+  //background: rgba(100, 139, 144, 0.5);
+  //background: rgba(80, 139, 144, 0.5);
+  //background: rgba(42, 142, 250, 0.5);
+  //background: rgba(120, 139, 144, 0.5);
+  //background:transparent image-url('noiseOverlay.png') repeat top left;
+  background: rgba(11, 142, 250, 0.44); // (green or blue)
+  //background: rgba(40, 190, 254, 0.3); //
+  //background: rgba(10, 132, 234, 0.4); //(deep green    or blue)
 }
 
-
-/*
-Animate.css - http://daneden.me/animate
-LICENSED UNDER THE  MIT LICENSE (MIT)
-
-Copyright (c) 2012 Dan Eden
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-
-.animated {
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-duration: 1s;
-  -moz-animation-duration: 1s;
-  -ms-animation-duration: 1s;
-  -o-animation-duration: 1s;
-  animation-duration: 1s;
-}
-
-.animated.hinge {
-  -webkit-animation-duration: 2s;
-  -moz-animation-duration: 2s;
-  -ms-animation-duration: 2s;
-  -o-animation-duration: 2s;
-  animation-duration: 2s;
-}
-
-@-webkit-keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-20px);
+#about {
+  h1 {
+    padding-left: 100px;
+    font-size: 30px;
+    padding-top: 100px;
   }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
+  p {
+    padding-left: 120px;
+    padding-right: 50px;
+    padding-top: 70px;
+    font-size: 18px;
   }
 }
 
-@-moz-keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -moz-transform: translateY(-20px);
-  }
+#social {
+  padding-top: 110px;
+  padding-left: 40px;
+}
 
-  100% {
-    opacity: 1;
-    -moz-transform: translateY(0);
+#contact {
+  padding-left: 40px;
+  position: absolute;
+  bottom: 20%;
+}
+
+
+#sidebar ul {
+  list-style:none;
+  margin:8px 0px;
+  a {
+    display: inline-block;
+    background-color:transparent;
+    padding:9px 25px 7px 10px;
+    color:#FFF;
+    text-decoration:none;
+    i {
+      padding: 0px 3px 0px 0px;
+      font-size: 14px;
+      vertical-align: 1px;
+    }
+    &:hover {
+      color:#FF0;
+      background-color:rgba(0,0,0,0.1);
+      border-radius: 5px;
+    }
   }
 }
 
-@-o-keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -ms-transform: translateY(-20px);
-  }
-
-  100% {
-    opacity: 1;
-    -ms-transform: translateY(0);
-  }
-}
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+.imageContainer {
+  position:absolute;
+  z-index: -999;
+  //top:0px;
+  left:0px;
+  bottom:0px;
+  height:100%;
+  width: 66%;
+  -moz-opacity: 0.04;       /* mozilla, netscape */
+  opacity: 0.03;           /* fx, safari, opera */
+  .shape {
+    position:absolute;
   }
 }
 
-.fadeInDown {
-  -webkit-animation-name: fadeInDown;
-  -moz-animation-name: fadeInDown;
-  -o-animation-name: fadeInDown;
-  animation-name: fadeInDown;
+// fonts
+
+h1, h2 {
+  font-family: "PT Sans"
 }
 
-#landing_page>h1 {
+#about h1 {
+  font-size: 40px;
+}
+
+h2 {
   font-size: 30px;
-  @extend .animated;
-  @extend .fadeInDown;
+}
+
+p, ul {
+  font-family: "PT Sans Narrow";
+  font-size: 22px;
+}
+
+// colors
+h1, h2, p, {
+  color: #fff;
+}
+.hide {
+   position: absolute !important;
+   top: -9999px !important;
+   left: -9999px !important;
+}
+
+
+// Medium-width screen
+@media only screen and (max-width: 630px),
+(device-height: 1024px) and (device-width: 768px) and (orientation: portrait) {
+  body { min-width: 0; }
+  body { -webkit-text-size-adjust: 120% }
+  li { padding: 10px; }
+}
+
+@media only screen and (max-width: 630px),
+(device-height: 1024px) and (device-width: 768px) and (orientation: landscape) {
+  #contact {
+    bottom: 10%;
+  }
+  p, ul {
+    font-size: 20px;
+  }
+  li { padding: 5px; }
+}
+
+
+// mobile screen
+@media screen and (device-width: 320px) and (device-height: 480px) {
+  /*#sidebar { @include reset-columns; } //reset columns*/
+
+  #contact {
+    bottom: 10%;
+  }
+
+  p, ul {
+    font-size: 20px;
+  }
 }
