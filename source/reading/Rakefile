@@ -1,0 +1,11 @@
+desc "create book list from bookpedia export list"
+
+task :book do
+  File.open("./index.markdown", "w") do |m|
+    File.open("./index.html") do |f|
+      f.each_line do |line|
+        m << line.gsub(/\?Sub.*(?=\))/, ' ')
+      end
+    end
+  end
+end
