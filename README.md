@@ -1,4 +1,5 @@
-blog
+My personal blog
 ====
 
-My personal blog
+Based on octopress
+
