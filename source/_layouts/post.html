@@ -4,7 +4,8 @@ single: true
 ---
 
 <div>
-<article class="hentry" role="article">
+  {% include post/variables.html %}
+  <article class="post hentry {% if linklog %}linklog{% endif %}" role="article">
   {% include article.html %}
   <footer>
     <p class="meta">
@@ -15,6 +16,7 @@ single: true
     {% unless page.sharing == false %}
       {% include post/sharing.html %}
     {% endunless %}
+    {% comment %}FIXME: Overlapping layout when title is too long{% endcomment %}
     <p class="meta">
       {% if page.previous.url %}
         <a class="basic-alignment left" href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">&laquo; {{page.previous.title}}</a>
