@@ -14,22 +14,30 @@ $grid-padding: 10px;
 $container-style: fluid;
 
 div#wrap {
-  background: image-url("700a.jpg") no-repeat -9999px -9999px;
+  background: image-url("700c.jpg") no-repeat -9999px -9999px;
   //background:transparent image-url('noiseOverlay.png') no-repeat -9999px -9999px;
   display: none;
 }
 
 html, body { height: 100%; }
+html {
+  background: image-url("700c.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 body {
   @include container;
   margin:0;
   padding:0;
   //background:transparent image-url('noiseOverlay.png') repeat top left;
+  /*background: image-url('700b.png') repeat top left;*/
   background-color: #B0862D; //brown
   //background-color: #c985e; //brown
   //background-color: #9ca885; //green
-  opacity: 0.98;
+  opacity: 0.97;
 }
 
 #about {
