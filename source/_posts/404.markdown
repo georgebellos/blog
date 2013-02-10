@@ -1,8 +1,0 @@
----
-layout: page
-title: "404 Error"
-date: 2011-10-26 23:25
-comments: false
-sharing: false
-footer: false
----
