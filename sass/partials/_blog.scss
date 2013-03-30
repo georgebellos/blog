@@ -1,13 +1,9 @@
 // Articles
 article.post {
-  width: auto;
-  position: relative;
-  padding-left: 50px;
   padding-top: 40px;
   padding-bottom: 40px;
-  border-top: 1px solid #E2E2E2;
   min-height: 130px;
-  /*border-top: 1px solid #E2E2E2;*/
+  border-bottom: 1px solid #E2E2E2;
 }
 
 section.comments {
@@ -17,18 +13,14 @@ section.comments {
   overflow-x: hidden;
 }
 
-section#main article.post h2, article.post p{
-  max-width: 550px;
+section#main article.post header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+section#main article.post h1 {
+  font-weight: normal;
 }
 
- /*code snippets*/
-.code {
-  max-width: 550px;
-}
- /* code blocks */
-article.post pre {
-  max-width: 524px;
-}
 
  /*Anchor*/
 h2.entry-title a.anchor {
@@ -41,20 +33,6 @@ h2.entry-title a.anchor {
 @media only screen and (max-width: 630px),
  (device-height: 1024px) and (device-width: 768px) and (orientation: portrait) {
 
-  body { min-width: 0; }
-
-  section#main {
-    margin: 0;
-    border: none;
-    min-width: 0;
-    margin-top: 15px;
-    overflow: hidden;
-  }
-
-  section#main  article.post p, article figure {
-    max-width: 650px;
-  }
-
   section#main article h2 {
     margin-top: 0;
   }
@@ -62,13 +40,6 @@ h2.entry-title a.anchor {
   article.post {
     padding-top: 30px;
     padding-bottom: 15px;
-  }
-
-  .code {
-    max-width: 650px;
-  }
-  article.post pre {
-    max-width: 624px;
   }
 }
 
@@ -79,9 +50,6 @@ h2.entry-title a.anchor {
     padding-right: 7px;
     padding-top: 30px;
     padding-bottom: 15px;
-  }
-   article figure {
-    max-width: 350px;
   }
 }
 
@@ -98,8 +66,6 @@ h2.entry-title a.anchor {
     max-width: 96%;
   }
 }
-
-/*apla den thelw na prosthesw alli mia klasi sto default source tou octopress*/
 
 article[role="article"]{
   @extend article.post;
