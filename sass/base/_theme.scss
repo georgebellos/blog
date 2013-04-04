@@ -1,4 +1,8 @@
 /* Core theme application */
+html {
+  -webkit-text-size-adjust: 110%
+}
+
 a {
   @include link-colors($link-color, $hover: $link-color-hover, $focus: $link-color-hover, $active: $link-color-active);
   text-decoration: none;
@@ -7,14 +11,6 @@ a {
 header h1 a {
   color: $link-title-color;
 }
-
-h2 a, header#sidebar a {
-  color: black;
-  &:hover{
-    color: $theme-color;
-  }
-}
-
 
 /* General rules */
 body {
@@ -31,7 +27,6 @@ ul {
   list-style-type: none;
 }
 
-
 // Logo
 aside#logo {
   background-color: $theme-color;
@@ -42,10 +37,9 @@ aside#logo div {
   background: white
 }
 
-
-// best with open sans
+// use with open sans
 body {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.53em;
   color: rgb(77, 77, 77);
   font-weight: normal;
@@ -53,17 +47,14 @@ body {
   word-spacing: 0px;
 }
 
-
 // pagination
 nav#pagination {
-  /*position: relative;*/
-  padding: 40px;
-  border-top: 1px solid #E2E2E2;
+  padding: 30px;
+  padding-left: 10px;
   padding-bottom: 100px;
   span.next a, span.prev a {
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 10px 20px;
+    /*@include radius(30px, 30px);*/
     border-radius: 30px;
     -moz-border-radius: 30px;
     -webkit-border-radius: 30px;
@@ -106,14 +97,8 @@ header#sidebar h1#title a {
 }
 
 
-html {
-  -webkit-text-size-adjust: 110%
-}
-
-
 /*readings*/
 .book h2 {
-  /*@extend .sans;*/
   font-size: 15px;
   padding-top: 0.8em;
   background: $img-border bottom left repeat-x;
@@ -134,12 +119,6 @@ html {
     }
   }
 }
-
-/*.basic-alignment {*/
-/*position: static;*/
-/*padding-top: 0.5em;*/
-/*}*/
-
 
 // images and photoes
 p img, video, .flash-video {

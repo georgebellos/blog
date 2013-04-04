@@ -1,108 +1,48 @@
 $min-width: 895px !default;
 $sidebar-size: 20%;
 
-body {
-  min-width: $min-width;
-}
-
 #main {
-  border-left: 1px solid #e3e3e3;
-  margin-left: $sidebar-size;
-  min-height: 900px;
-  min-width: 658px;
-  position: relative;
-  z-index: 9999;
+  width: 660px;
+  margin: 0px auto;
 }
 
 #sidebar {
-  position: fixed;
-  width: $sidebar-size;
-  padding-top: 3%;
-  padding-left: 1.5%;
-  min-height: 100%;
-  z-index: 1;
+  position: relative;
+  padding-top: 20px;
+  border-bottom: 1px solid #E2E2E2;
+  background-color: rgb(251, 252, 254);
+  margin-bottom: 10px;
 }
 
 ul#menu {
-  clear: both;
-  margin-left: 30px;
-  width: 75%;
+  width: auto;
+  margin: 0px auto;
+  padding: 0px;
+  text-align: center;
   li {
     display: block;
-    margin-bottom: 15px;
+  }
+
+  li.link {
+    display: inline-block;
+    width: auto;
+    margin-bottom: 5px;
   }
   a {
+    margin-left: 0px;
     display: inline-block;
-    z-index: 999;
-    padding: 7px;
-    padding-left: 33px;
-    padding-right: 12px;
-    margin-left: -15px;
-    position: relative;
   }
-}
-
-#nexus {
-  position: fixed;
-  left: 48px;
-  bottom: 25px;
-  z-index: 9999;
 }
 
 // Short screen
 @media only screen and (max-height: 650px) {
-  #sidebar {
-    position: absolute;
-  }
-  #nexus {
-    position: absolute;
-    display: inline-block;
-    margin-right: 5px;
-    left: auto;
-  }
-  ul#menu a{
-    margin-left: 0px;
-  }
-}
-
-// Medium-width screen
-@media only screen and (max-width: 630px),
-(device-height: 1024px) and (device-width: 768px) and (orientation: portrait) {
-  body { min-width: 0; }
-
-  #sidebar {
-    position: relative;
-    width: 100%;
-    text-align: center;
-    padding: 0;
-  }
-
-  ul#menu {
+  #main {
     width: auto;
-    margin: 0 auto;
-    padding: 0;
-    text-align: center;
-    li.link {
-      display: inline-block;
-      float: none;
-      width: auto;
-      clear: none;
-      margin: 0;
-      margin-bottom: 5px;
-    }
-    li.rss {
-      display: none;
-    }
-    a {
-      margin-left: 0px;
-    }
+    max-width: 95%;
   }
 
-  #nexus {
-    top: -10px;
-    right: 5px;
-    left: auto;
-    position: absolute;
+  ul#menu a{
+    /*margin-left: 0px;*/
   }
 }
 
@@ -110,8 +50,7 @@ ul#menu {
 /*this also fixes the position fixed problems with sidebar*/
 @media only screen and (max-width: 630px),
 (device-height: 1024px) and (device-width: 768px) and (orientation: landscape) {
-  #sidebar{
+  #main, #sidebar{
     -webkit-transform:translate3d(0,0,0);
   }
 }
-

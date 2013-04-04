@@ -18,7 +18,7 @@ $header-subtitle-font-family: $heading-font-family !default;
 
 body {
   @extend .sans;
-  font-size: 1em;
+  font-size: 1.1em;
   line-height: 1.4;
 }
 
@@ -126,8 +126,8 @@ small { font-size: .8em; }
 
 big { font-size: 1.2em; }
 
-bcklockquote {
-  max-width: 450px;
+blockquote {
+  max-width: 550px;
   $bq-margin: 1.2em;
   font-style: italic;
   position: relative;

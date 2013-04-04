@@ -9,9 +9,9 @@ single: true
   {% include article.html %}
   <footer>
     <p class="meta">
-      {% include post/author.html %}
-      {% include post/date.html %}{% if updated %}{{ updated }}{% else %}{{ time }}{% endif %}
-      {% include post/categories.html %}
+      {% comment %}{% include post/author.html %}{% endcomment %}
+      {% comment %}{% include post/date.html %}{% if updated %}{{ updated }}{% else %}{{ time }}{% endif %}{% endcomment %}
+      Tags: {% include post/categories.html %}
     </p>
     {% unless page.sharing == false %}
       {% include post/sharing.html %}
