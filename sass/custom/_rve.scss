@@ -5,7 +5,15 @@
   height: 0;
   overflow: hidden;
   margin-bottom: 1.5em;
+<<<<<<< HEAD
   @include shadow-box;
+=======
+<<<<<<< HEAD
+  @include shadow-box;
+=======
+  @include shadow-box(1px, 1px);
+>>>>>>> b7137ed... Add responsive video plugins
+>>>>>>> develop
 
   iframe, object, embed {
     position: absolute;
@@ -15,3 +23,10 @@
     height: 100%;
   }
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> b7137ed... Add responsive video plugins
+>>>>>>> develop
