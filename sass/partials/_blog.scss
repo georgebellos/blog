@@ -39,7 +39,11 @@ h2.entry-title a.anchor {
 
   article.post {
     padding-top: 30px;
-    padding-bottom: 15px;
+  }
+
+  footer {
+    display: inline-block;
+    padding-bottom: 20px;
   }
 }
 
@@ -49,7 +53,10 @@ h2.entry-title a.anchor {
     padding-left: 7px;
     padding-right: 7px;
     padding-top: 30px;
-    padding-bottom: 15px;
+    /*padding-bottom: 15px;*/
+  }
+  footer {
+    display: inline-block;
   }
 }
 
@@ -64,6 +71,11 @@ h2.entry-title a.anchor {
   }
    article figure {
     max-width: 96%;
+  }
+
+  footer {
+    display: inline-block;
+    padding-bottom: 15px;
   }
 }
 
