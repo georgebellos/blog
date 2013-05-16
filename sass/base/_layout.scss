@@ -8,10 +8,13 @@ $sidebar-size: 20%;
 
 #sidebar {
   position: relative;
-  padding-top: 20px;
+  padding-top: 10px;
   border-bottom: 1px solid #E2E2E2;
   background-color: rgb(251, 252, 254);
   margin-bottom: 10px;
+  h1 {
+    padding: 15px;
+  }
 }
 
 ul#menu {
