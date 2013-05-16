@@ -2,9 +2,9 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://georgebellos.com/blog
+url: http://georgebellos.com
 title: George Bellos
-subtitle: Software Enginner
+subtitle:
 author: George Bellos
 simple_search: false
 description: Personal Blog of George Bellos
