@@ -13,17 +13,16 @@ you like.
 
 [{% img left Images/970.jpg 100 120 %}]( http://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X )
 
-Comments: This is my favorite book, i have recomended it more times than i i can remember.
-
-My Rating: 10/10
-
+This is my favorite book, i have recomended it more times than i can remember. If you starting a career in software development you should definetaly read it. Even it has been published in 1999 it contains excellent advices.
 
 ## [ Metaprogramming Ruby ]( http://www.amazon.com/Metaprogramming-Ruby-Paolo-Perrotta/dp/1934356476 )
 
 [{% img left Images/1812.jpg 100 120 %}]( http://www.amazon.com/Metaprogramming-Ruby-Paolo-Perrotta/dp/1934356476 )
 
-Comments: 
+Have you seen this diagram when you first learned about the ruby object mode from the documentation
 
-My Rating: 10/10
+It also so you the power of ruby using all this cool staff like procs, defining dynamic methods.
 
+If you already know the basics of ruby and you want to see some practical examples how to use all this powerfull tools ruby provides, metaprogramming ruby is the book for you.
 
+One of the nicest things for this book is that the style the author uses to explain staff. You are starting a new job and you want to learn ruby and you do pair programming with a senior ruby dev.
