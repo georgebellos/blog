@@ -5,7 +5,7 @@
   height: 0;
   overflow: hidden;
   margin-bottom: 1.5em;
-  @include shadow-box;
+  @include shadow-box(1px, 1px);
 
   iframe, object, embed {
     position: absolute;

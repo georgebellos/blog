@@ -35,7 +35,12 @@ plugins: plugins
 code_dir: downloads/code
 category_dir: blog/categories
 markdown: rdiscount
-pygments: false # Jekyll's default Python Pygments have been replaced by pygments.rb. Set to true to use Albino + Pythong Pygments
+rdiscount:
+  extensions:
+    - autolink
+    - footnotes
+    - smart
+pygments: false # default python pygments have been replaced by pygments.rb
 
 paginate: 15          # Posts per page on the blog index
 pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
@@ -51,11 +56,15 @@ standard_post_marker:
 
 titlecase: true       # Converts page and post titles to titlecase
 
-# To change the layout's default sidebar Add a new sidebar source/_includes/sidebars/your_sidebar.html
-# then make changes below, eg. post_sidebar: your_sidebar.html
-blog_index_sidebar: blog_index_default.html
-page_sidebar: page_default.html
-post_sidebar: post_default.html
+# list each of the sidebar modules you want to include, in the order you want them to appear.
+# To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
+default_asides: []
+
+# Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
+# and add an array with the asides you want to use.
+# blog_index_asides:
+post_asides: [asides/recent_posts.html]
+# page_asides:
 
 # ----------------------- #
 #   3rd Party Settings    #
@@ -73,10 +82,6 @@ github_skip_forks: true
 
 # Twitter
 twitter_user: georgebellos
-twitter_tweet_count:
-twitter_show_replies: false
-twitter_follow_button: false
-twitter_show_follower_count: false
 twitter_tweet_button: false
 
 # Google +1

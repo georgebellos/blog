@@ -24,5 +24,3 @@ Have you seen this diagram when you first learned about the ruby object mode fro
 It also so you the power of ruby using all this cool staff like procs, defining dynamic methods.
 
 If you already know the basics of ruby and you want to see some practical examples how to use all this powerfull tools ruby provides, metaprogramming ruby is the book for you.
-
-One of the nicest things for this book is that the style the author uses to explain staff. You are starting a new job and you want to learn ruby and you do pair programming with a senior ruby dev.
